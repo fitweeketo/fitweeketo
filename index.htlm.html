@@ -1,0 +1,2445 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan Keto + Fitness: Tu Guía Semanal</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#4CAF50',secondary:'#FF9800'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Montserrat', sans-serif;
+background-color: #fafafa;
+}
+input[type="checkbox"] {
+appearance: none;
+width: 1.25rem;
+height: 1.25rem;
+border: 2px solid #e2e8f0;
+border-radius: 4px;
+margin-right: 0.5rem;
+position: relative;
+cursor: pointer;
+transition: all 0.2s;
+}
+input[type="checkbox"]:checked {
+background-color: #4CAF50;
+border-color: #4CAF50;
+}
+input[type="checkbox"]:checked::after {
+content: "";
+position: absolute;
+top: 0.25rem;
+left: 0.4rem;
+width: 0.3rem;
+height: 0.6rem;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.tab-content {
+display: none;
+}
+.tab-content.active {
+display: block;
+}
+.custom-switch {
+position: relative;
+display: inline-block;
+width: 60px;
+height: 30px;
+}
+.custom-switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.switch-slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #e2e8f0;
+transition: .4s;
+border-radius: 30px;
+}
+.switch-slider:before {
+position: absolute;
+content: "";
+height: 22px;
+width: 22px;
+left: 4px;
+bottom: 4px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+input:checked + .switch-slider {
+background-color: #4CAF50;
+}
+input:checked + .switch-slider:before {
+transform: translateX(30px);
+}
+.timer-button {
+width: 40px;
+height: 40px;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: #4CAF50;
+color: white;
+cursor: pointer;
+}
+.intensity-indicator {
+display: flex;
+gap: 4px;
+}
+.intensity-dot {
+width: 10px;
+height: 10px;
+border-radius: 50%;
+background-color: #e2e8f0;
+}
+.intensity-dot.active {
+background-color: #4CAF50;
+}
+</style>
+</head>
+<body>
+<!-- Header -->
+<header class="bg-white shadow-md sticky top-0 z-50">
+<div class="container mx-auto px-4 py-4 flex justify-between items-center">
+<div class="flex items-center">
+<h1 class="text-3xl font-['Pacifico'] text-primary mr-2">FitWeeKeto</h1>
+<span class="text-gray-600 text-sm">Tu guía semanal</span>
+</div>
+<div class="flex items-center space-x-4">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 cursor-pointer">
+<i class="ri-bookmark-line text-gray-600"></i>
+</div>
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 cursor-pointer">
+<i class="ri-share-line text-gray-600"></i>
+</div>
+<button id="downloadBtn" class="bg-primary text-white px-4 py-2 !rounded-button flex items-center">
+<i class="ri-download-line mr-2"></i>
+<span class="whitespace-nowrap">Descargar eBook</span>
+</button>
+<!-- Download Modal -->
+<div id="downloadModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+<div class="bg-white rounded-lg max-w-lg w-full mx-4 relative">
+<button id="closeModal" class="absolute right-4 top-4 text-gray-500 hover:text-gray-700">
+<i class="ri-close-line text-2xl"></i>
+</button>
+<div class="p-6">
+<div class="flex flex-col md:flex-row gap-6 mb-6">
+<div class="w-full md:w-1/2">
+<img src="https://readdy.ai/api/search-image?query=Professional%20ebook%20cover%20design%20for%20a%20keto%20diet%20and%20fitness%20guide%2C%20featuring%20healthy%20food%20and%20exercise%20elements.%20Clean%20and%20modern%20layout%20with%20bold%20typography.&width=400&height=500&seq=12&orientation=portrait" alt="eBook Cover" class="w-full h-48 md:h-64 object-cover rounded-lg shadow-md">
+</div>
+<div class="w-full md:w-1/2">
+<h3 class="text-2xl font-bold text-gray-800 mb-2">Plan KetoFit</h3>
+<p class="text-gray-600 mb-4">Plan completo de 5 días con recetas keto y rutinas de ejercicios. Incluye planificación detallada de comidas, lista de compras y seguimiento de progreso.</p>
+<div class="flex items-center text-sm text-gray-500 mb-2">
+<i class="ri-file-list-line mr-2"></i>
+<span>PDF - 15MB</span>
+</div>
+<div class="flex items-center text-sm text-gray-500">
+<i class="ri-time-line mr-2"></i>
+<span>Acceso inmediato</span>
+</div>
+</div>
+</div>
+<form id="downloadForm" class="space-y-4">
+<div>
+<label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+<input type="email" id="email" required class="w-full px-4 py-2 border border-gray-200 rounded-button focus:outline-none focus:border-primary" placeholder="tu@email.com">
+</div>
+<div>
+<label for="downloadUrl" class="block text-sm font-medium text-gray-700 mb-1">URL del libro electrónico</label>
+<input type="url" id="downloadUrl" required class="w-full px-4 py-2 border border-gray-200 rounded-button focus:outline-none focus:border-primary" placeholder="https://ejemplo.com/libro.pdf">
+</div>
+<div class="flex items-start">
+<input type="checkbox" id="subscribe" class="mt-1">
+<label for="subscribe" class="ml-2 text-sm text-gray-600">Me gustaría recibir actualizaciones sobre nuevas recetas y rutinas de ejercicios.</label>
+</div>
+<button type="submit" class="w-full bg-primary text-white py-3 !rounded-button font-medium flex items-center justify-center">
+<i class="ri-download-line mr-2"></i>
+Descargar ahora
+</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://readdy.ai/api/search-image?query=A%20modern%20and%20clean%20image%20showing%20healthy%20keto%20food%20ingredients%20and%20fitness%20equipment%2C%20with%20avocados%2C%20eggs%2C%20salmon%2C%20nuts%2C%20and%20dumbbells%20arranged%20in%20a%20visually%20appealing%20way.%20The%20left%20side%20has%20a%20clean%20white%20space%20for%20text%2C%20while%20the%20right%20side%20displays%20the%20food%20and%20fitness%20items.%20Natural%20lighting%2C%20professional%20food%20photography%20style.&width=1600&height=600&seq=1&orientation=landscape'); filter: brightness(0.9);"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-white via-white/90 to-transparent"></div>
+<div class="container mx-auto px-4 py-16 relative">
+<div class="max-w-2xl">
+<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Plan Keto + Fitness</h1>
+<p class="text-xl text-gray-700 mb-8">Tu guía completa para 5 días de alimentación keto combinada con ejercicios diarios diseñados para maximizar tus resultados.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-white px-6 py-3 !rounded-button font-medium whitespace-nowrap">
+Comenzar ahora
+</button>
+<button class="bg-white border border-gray-300 text-gray-700 px-6 py-3 !rounded-button font-medium whitespace-nowrap flex items-center justify-center">
+<i class="ri-play-circle-line mr-2"></i>
+Ver introducción
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Tabs Navigation -->
+<div class="bg-white border-b">
+<div class="container mx-auto px-4">
+<div class="flex overflow-x-auto py-2 gap-2" id="tabs">
+<button class="tab-button px-6 py-3 !rounded-button font-medium whitespace-nowrap bg-primary text-white" data-tab="lunes">Lunes</button>
+<button class="tab-button px-6 py-3 !rounded-button font-medium whitespace-nowrap bg-gray-100 text-gray-700" data-tab="martes">Martes</button>
+<button class="tab-button px-6 py-3 !rounded-button font-medium whitespace-nowrap bg-gray-100 text-gray-700" data-tab="miercoles">Miércoles</button>
+<button class="tab-button px-6 py-3 !rounded-button font-medium whitespace-nowrap bg-gray-100 text-gray-700" data-tab="jueves">Jueves</button>
+<button class="tab-button px-6 py-3 !rounded-button font-medium whitespace-nowrap bg-gray-100 text-gray-700" data-tab="viernes">Viernes</button>
+<button class="tab-button px-6 py-3 !rounded-button font-medium whitespace-nowrap bg-gray-100 text-gray-700" data-tab="resumen">Resumen Semanal</button>
+</div>
+</div>
+</div>
+<!-- Main Content -->
+<main class="container mx-auto px-4 py-8">
+<!-- Lunes -->
+<div id="lunes" class="tab-content active">
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Plan de Alimentación -->
+<div class="w-full lg:w-1/2">
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="p-6">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-2xl font-bold text-gray-800">Plan de Alimentación - Lunes</h2>
+<div class="flex items-center">
+<span class="text-sm text-gray-500 mr-2">Completado</span>
+<label class="custom-switch">
+<input type="checkbox">
+<span class="switch-slider"></span>
+</label>
+</div>
+</div>
+<div class="mb-8">
+<div class="rounded-lg overflow-hidden h-64 mb-4">
+<img src="https://readdy.ai/api/search-image?query=A%20beautiful%20keto%20breakfast%20with%20avocado%2C%20eggs%2C%20bacon%2C%20and%20coffee%20on%20a%20white%20plate%20with%20a%20clean%20white%20background.%20Professional%20food%20photography%20with%20natural%20lighting%2C%20showing%20the%20texture%20and%20colors%20of%20the%20food%20in%20detail.%20The%20composition%20is%20elegant%20and%20appetizing.&width=800&height=500&seq=2&orientation=landscape" alt="Desayuno Keto" class="w-full h-full object-cover object-top">
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between mb-2">
+<span class="font-medium">Calorías totales:</span>
+<span>1,650 kcal</span>
+</div>
+<div class="flex justify-between mb-2">
+<span class="font-medium">Grasas:</span>
+<span>135g (74%)</span>
+</div>
+<div class="flex justify-between mb-2">
+<span class="font-medium">Proteínas:</span>
+<span>85g (21%)</span>
+</div>
+<div class="flex justify-between">
+<span class="font-medium">Carbohidratos:</span>
+<span>20g (5%)</span>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div>
+<h3 class="text-lg font-semibold text-gray-800 mb-3">Desayuno</h3>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h4 class="font-medium mb-2">Huevos revueltos con aguacate</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<input type="checkbox" id="item1">
+<label for="item1" class="cursor-pointer">3 huevos grandes</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="item2">
+<label for="item2" class="cursor-pointer">1/2 aguacate</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="item3">
+<label for="item3" class="cursor-pointer">2 lonchas de bacon</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="item4">
+<label for="item4" class="cursor-pointer">1 cucharada de aceite de oliva</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="item5">
+<label for="item5" class="cursor-pointer">Sal y pimienta al gusto</label>
+</li>
+</ul>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-gray-800 mb-3">Almuerzo</h3>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h4 class="font-medium mb-2">Ensalada de salmón con espinacas</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<input type="checkbox" id="item6">
+<label for="item6" class="cursor-pointer">150g de salmón a la plancha</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="item7">
+<label for="item7" class="cursor-pointer">2 tazas de espinacas frescas</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="item8">
+<label for="item8" class="cursor-pointer">1/4 taza de queso feta</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="item9">
+<label for="item9" class="cursor-pointer">10 aceitunas kalamata</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="item10">
+<label for="item10" class="cursor-pointer">2 cucharadas de aceite de oliva</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="item11">
+<label for="item11" class="cursor-pointer">1 cucharada de vinagre balsámico</label>
+</li>
+</ul>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-gray-800 mb-3">Cena</h3>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h4 class="font-medium mb-2">Pollo al horno con verduras</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<input type="checkbox" id="item12">
+<label for="item12" class="cursor-pointer">200g de muslo de pollo con piel</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="item13">
+<label for="item13" class="cursor-pointer">1 taza de brócoli</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="item14">
+<label for="item14" class="cursor-pointer">1/2 taza de coliflor</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="item15">
+<label for="item15" class="cursor-pointer">2 cucharadas de mantequilla</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="item16">
+<label for="item16" class="cursor-pointer">Hierbas y especias al gusto</label>
+</li>
+</ul>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-gray-800 mb-3">Snack</h3>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h4 class="font-medium mb-2">Snack de media tarde</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<input type="checkbox" id="item17">
+<label for="item17" class="cursor-pointer">30g de nueces mixtas (almendras, nueces, macadamias)</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="item18">
+<label for="item18" class="cursor-pointer">1 cucharada de mantequilla de almendra</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="item19">
+<label for="item19" class="cursor-pointer">1 taza de té verde sin azúcar</label>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Plan de Ejercicios -->
+<div class="w-full lg:w-1/2">
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="p-6">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-2xl font-bold text-gray-800">Rutina de Ejercicios - Lunes</h2>
+<div class="flex items-center">
+<span class="text-sm text-gray-500 mr-2">Completado</span>
+<label class="custom-switch">
+<input type="checkbox">
+<span class="switch-slider"></span>
+</label>
+</div>
+</div>
+<div class="mb-8">
+<div class="rounded-lg overflow-hidden h-64 mb-4">
+<img src="https://readdy.ai/api/search-image?query=A%20person%20performing%20high-intensity%20cardio%20exercises%20in%20a%20modern%20gym%20setting.%20The%20image%20shows%20dynamic%20movement%20with%20proper%20form%2C%20wearing%20athletic%20clothing.%20The%20background%20is%20clean%20and%20minimalist.%20Professional%20fitness%20photography%20style%20with%20natural%20lighting%20highlighting%20the%20muscular%20definition%20and%20movement.&width=800&height=500&seq=3&orientation=landscape" alt="Ejercicios de cardio" class="w-full h-full object-cover object-top">
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h3 class="font-medium text-lg mb-2">Cardio HIIT - 30 minutos</h3>
+<p class="text-gray-700 mb-4">Esta rutina de alta intensidad ayuda a quemar grasa mientras preserva la masa muscular, ideal para complementar la dieta keto.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center">
+<span class="text-sm font-medium text-gray-600 mr-2">Intensidad:</span>
+<div class="intensity-indicator">
+<div class="intensity-dot active"></div>
+<div class="intensity-dot active"></div>
+<div class="intensity-dot active"></div>
+<div class="intensity-dot"></div>
+<div class="intensity-dot"></div>
+</div>
+</div>
+<div class="flex items-center">
+<span class="text-sm font-medium text-gray-600 mr-2">Calorías:</span>
+<span class="text-sm">300-350</span>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold">1. Saltos de tijera</h3>
+<div class="flex items-center">
+<div class="timer-button mr-2" data-time="30">
+<i class="ri-timer-line"></i>
+</div>
+<span class="text-sm font-medium">30 seg</span>
+</div>
+</div>
+<p class="text-gray-700 mb-3">Comienza con los pies juntos y los brazos a los lados. Salta abriendo las piernas y levantando los brazos por encima de la cabeza. Vuelve a la posición inicial con otro salto.</p>
+<div class="flex justify-between">
+<span class="text-sm text-gray-600">Series: 4</span>
+<span class="text-sm text-gray-600">Descanso: 15 seg</span>
+</div>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold">2. Burpees</h3>
+<div class="flex items-center">
+<div class="timer-button mr-2" data-time="30">
+<i class="ri-timer-line"></i>
+</div>
+<span class="text-sm font-medium">30 seg</span>
+</div>
+</div>
+<p class="text-gray-700 mb-3">Comienza de pie, baja a posición de cuclillas, coloca las manos en el suelo, extiende las piernas hacia atrás en posición de plancha, haz una flexión, vuelve a la posición de cuclillas y salta.</p>
+<div class="flex justify-between">
+<span class="text-sm text-gray-600">Series: 4</span>
+<span class="text-sm text-gray-600">Descanso: 15 seg</span>
+</div>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold">3. Mountain climbers</h3>
+<div class="flex items-center">
+<div class="timer-button mr-2" data-time="30">
+<i class="ri-timer-line"></i>
+</div>
+<span class="text-sm font-medium">30 seg</span>
+</div>
+</div>
+<p class="text-gray-700 mb-3">Comienza en posición de plancha alta. Lleva una rodilla hacia el pecho y luego vuelve a la posición inicial. Alterna las piernas rápidamente como si estuvieras corriendo.</p>
+<div class="flex justify-between">
+<span class="text-sm text-gray-600">Series: 4</span>
+<span class="text-sm text-gray-600">Descanso: 15 seg</span>
+</div>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold">4. Sentadillas con salto</h3>
+<div class="flex items-center">
+<div class="timer-button mr-2" data-time="30">
+<i class="ri-timer-line"></i>
+</div>
+<span class="text-sm font-medium">30 seg</span>
+</div>
+</div>
+<p class="text-gray-700 mb-3">Realiza una sentadilla normal, pero al subir, impulsa con fuerza para realizar un salto. Aterriza suavemente y vuelve a la posición de sentadilla.</p>
+<div class="flex justify-between">
+<span class="text-sm text-gray-600">Series: 4</span>
+<span class="text-sm text-gray-600">Descanso: 15 seg</span>
+</div>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold">5. Plancha lateral con rotación</h3>
+<div class="flex items-center">
+<div class="timer-button mr-2" data-time="30">
+<i class="ri-timer-line"></i>
+</div>
+<span class="text-sm font-medium">30 seg (cada lado)</span>
+</div>
+</div>
+<p class="text-gray-700 mb-3">Comienza en posición de plancha lateral apoyado en el antebrazo. Extiende el brazo superior hacia el techo, luego gira el torso llevando ese brazo por debajo del cuerpo. Vuelve a la posición inicial.</p>
+<div class="flex justify-between">
+<span class="text-sm text-gray-600">Series: 4</span>
+<span class="text-sm text-gray-600">Descanso: 15 seg</span>
+</div>
+</div>
+<div class="bg-primary/10 p-4 rounded-lg">
+<h3 class="font-semibold mb-2">Consejos para el entrenamiento</h3>
+<ul class="space-y-2 text-gray-700">
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<span>Mantén una buena hidratación antes, durante y después del ejercicio.</span>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<span>Si eres principiante, reduce el tiempo de cada ejercicio a 20 segundos.</span>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<span>Escucha a tu cuerpo: si sientes mareo o fatiga extrema, descansa.</span>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<span>Realiza un calentamiento de 5 minutos antes de comenzar.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Martes -->
+<div id="martes" class="tab-content">
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Plan de Alimentación -->
+<div class="w-full lg:w-1/2">
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="p-6">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-2xl font-bold text-gray-800">Plan de Alimentación - Martes</h2>
+<div class="flex items-center">
+<span class="text-sm text-gray-500 mr-2">Completado</span>
+<label class="custom-switch">
+<input type="checkbox">
+<span class="switch-slider"></span>
+</label>
+</div>
+</div>
+<div class="mb-8">
+<div class="rounded-lg overflow-hidden h-64 mb-4">
+<img src="https://readdy.ai/api/search-image?query=A%20beautiful%20keto%20lunch%20with%20grilled%20steak%2C%20avocado%2C%20and%20mixed%20green%20salad%20on%20a%20white%20plate%20with%20a%20clean%20white%20background.%20Professional%20food%20photography%20with%20natural%20lighting%2C%20showing%20the%20texture%20and%20colors%20of%20the%20food%20in%20detail.%20The%20composition%20is%20elegant%20and%20appetizing.&width=800&height=500&seq=4&orientation=landscape" alt="Almuerzo Keto" class="w-full h-full object-cover object-top">
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between mb-2">
+<span class="font-medium">Calorías totales:</span>
+<span>1,720 kcal</span>
+</div>
+<div class="flex justify-between mb-2">
+<span class="font-medium">Grasas:</span>
+<span>140g (73%)</span>
+</div>
+<div class="flex justify-between mb-2">
+<span class="font-medium">Proteínas:</span>
+<span>90g (21%)</span>
+</div>
+<div class="flex justify-between">
+<span class="font-medium">Carbohidratos:</span>
+<span>22g (6%)</span>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div>
+<h3 class="text-lg font-semibold text-gray-800 mb-3">Desayuno</h3>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h4 class="font-medium mb-2">Batido keto de aguacate y espinacas</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<input type="checkbox" id="martes-item1">
+<label for="martes-item1" class="cursor-pointer">1/2 aguacate</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="martes-item2">
+<label for="martes-item2" class="cursor-pointer">1 taza de espinacas</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="martes-item3">
+<label for="martes-item3" class="cursor-pointer">1 cucharada de mantequilla de almendra</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="martes-item4">
+<label for="martes-item4" class="cursor-pointer">1 cucharada de aceite de coco</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="martes-item5">
+<label for="martes-item5" class="cursor-pointer">1 taza de leche de almendra sin azúcar</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="martes-item6">
+<label for="martes-item6" class="cursor-pointer">1 cucharada de semillas de chía</label>
+</li>
+</ul>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-gray-800 mb-3">Almuerzo</h3>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h4 class="font-medium mb-2">Filete de ternera con mantequilla de hierbas</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<input type="checkbox" id="martes-item7">
+<label for="martes-item7" class="cursor-pointer">200g de filete de ternera</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="martes-item8">
+<label for="martes-item8" class="cursor-pointer">2 cucharadas de mantequilla</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="martes-item9">
+<label for="martes-item9" class="cursor-pointer">1 diente de ajo picado</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="martes-item10">
+<label for="martes-item10" class="cursor-pointer">1 cucharada de hierbas frescas picadas</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="martes-item11">
+<label for="martes-item11" class="cursor-pointer">1 taza de espárragos a la parrilla</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="martes-item12">
+<label for="martes-item12" class="cursor-pointer">Sal y pimienta al gusto</label>
+</li>
+</ul>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-gray-800 mb-3">Cena</h3>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h4 class="font-medium mb-2">Salmón al horno con pesto de albahaca</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<input type="checkbox" id="martes-item13">
+<label for="martes-item13" class="cursor-pointer">180g de filete de salmón</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="martes-item14">
+<label for="martes-item14" class="cursor-pointer">2 cucharadas de pesto de albahaca</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="martes-item15">
+<label for="martes-item15" class="cursor-pointer">1 taza de calabacín en espiral</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="martes-item16">
+<label for="martes-item16" class="cursor-pointer">1 cucharada de aceite de oliva</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="martes-item17">
+<label for="martes-item17" class="cursor-pointer">Zumo de limón</label>
+</li>
+</ul>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-gray-800 mb-3">Snack</h3>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h4 class="font-medium mb-2">Snack de media tarde</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<input type="checkbox" id="martes-item18">
+<label for="martes-item18" class="cursor-pointer">2 huevos duros</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="martes-item19">
+<label for="martes-item19" class="cursor-pointer">1 cucharada de mayonesa casera</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="martes-item20">
+<label for="martes-item20" class="cursor-pointer">Pizca de pimentón</label>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Plan de Ejercicios -->
+<div class="w-full lg:w-1/2">
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="p-6">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-2xl font-bold text-gray-800">Rutina de Ejercicios - Martes</h2>
+<div class="flex items-center">
+<span class="text-sm text-gray-500 mr-2">Completado</span>
+<label class="custom-switch">
+<input type="checkbox">
+<span class="switch-slider"></span>
+</label>
+</div>
+</div>
+<div class="mb-8">
+<div class="rounded-lg overflow-hidden h-64 mb-4">
+<img src="https://readdy.ai/api/search-image?query=A%20person%20performing%20strength%20training%20exercises%20with%20dumbbells%20in%20a%20modern%20gym%20setting.%20The%20image%20shows%20proper%20form%20for%20upper%20body%20exercises%2C%20wearing%20athletic%20clothing.%20The%20background%20is%20clean%20and%20minimalist.%20Professional%20fitness%20photography%20style%20with%20natural%20lighting%20highlighting%20the%20muscular%20definition%20and%20movement.&width=800&height=500&seq=5&orientation=landscape" alt="Entrenamiento de fuerza" class="w-full h-full object-cover object-top">
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h3 class="font-medium text-lg mb-2">Entrenamiento de fuerza - Tren superior</h3>
+<p class="text-gray-700 mb-4">Este entrenamiento se centra en desarrollar fuerza en la parte superior del cuerpo, ideal para complementar la dieta keto y aumentar el metabolismo basal.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center">
+<span class="text-sm font-medium text-gray-600 mr-2">Intensidad:</span>
+<div class="intensity-indicator">
+<div class="intensity-dot active"></div>
+<div class="intensity-dot active"></div>
+<div class="intensity-dot active"></div>
+<div class="intensity-dot active"></div>
+<div class="intensity-dot"></div>
+</div>
+</div>
+<div class="flex items-center">
+<span class="text-sm font-medium text-gray-600 mr-2">Calorías:</span>
+<span class="text-sm">250-300</span>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold">1. Flexiones de pecho</h3>
+<div class="flex items-center">
+<span class="text-sm font-medium">12-15 repeticiones</span>
+</div>
+</div>
+<p class="text-gray-700 mb-3">Colócate en posición de plancha con las manos a la altura de los hombros. Baja el cuerpo manteniendo la espalda recta hasta casi tocar el suelo con el pecho, luego empuja hacia arriba.</p>
+<div class="flex justify-between">
+<span class="text-sm text-gray-600">Series: 3</span>
+<span class="text-sm text-gray-600">Descanso: 60 seg</span>
+</div>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold">2. Remo con mancuerna</h3>
+<div class="flex items-center">
+<span class="text-sm font-medium">12 repeticiones (cada lado)</span>
+</div>
+</div>
+<p class="text-gray-700 mb-3">Coloca una mano y una rodilla sobre un banco. Con la otra mano sujeta una mancuerna, con el brazo extendido. Tira de la mancuerna hacia arriba, llevando el codo hacia el techo.</p>
+<div class="flex justify-between">
+<span class="text-sm text-gray-600">Series: 3</span>
+<span class="text-sm text-gray-600">Descanso: 60 seg</span>
+</div>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold">3. Press de hombros con mancuernas</h3>
+<div class="flex items-center">
+<span class="text-sm font-medium">10-12 repeticiones</span>
+</div>
+</div>
+<p class="text-gray-700 mb-3">De pie, sostén una mancuerna en cada mano a la altura de los hombros. Empuja las mancuernas hacia arriba hasta que los brazos estén completamente extendidos. Baja lentamente a la posición inicial.</p>
+<div class="flex justify-between">
+<span class="text-sm text-gray-600">Series: 3</span>
+<span class="text-sm text-gray-600">Descanso: 60 seg</span>
+</div>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold">4. Curl de bíceps con mancuernas</h3>
+<div class="flex items-center">
+<span class="text-sm font-medium">12 repeticiones</span>
+</div>
+</div>
+<p class="text-gray-700 mb-3">De pie, sostén una mancuerna en cada mano con los brazos extendidos. Flexiona los codos y lleva las mancuernas hacia los hombros. Baja lentamente a la posición inicial.</p>
+<div class="flex justify-between">
+<span class="text-sm text-gray-600">Series: 3</span>
+<span class="text-sm text-gray-600">Descanso: 60 seg</span>
+</div>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold">5. Extensiones de tríceps</h3>
+<div class="flex items-center">
+<span class="text-sm font-medium">12 repeticiones</span>
+</div>
+</div>
+<p class="text-gray-700 mb-3">Sentado o de pie, sostén una mancuerna con ambas manos por encima de la cabeza. Baja la mancuerna detrás de la cabeza flexionando los codos. Extiende los brazos para volver a la posición inicial.</p>
+<div class="flex justify-between">
+<span class="text-sm text-gray-600">Series: 3</span>
+<span class="text-sm text-gray-600">Descanso: 60 seg</span>
+</div>
+</div>
+<div class="bg-primary/10 p-4 rounded-lg">
+<h3 class="font-semibold mb-2">Consejos para el entrenamiento</h3>
+<ul class="space-y-2 text-gray-700">
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<span>Utiliza un peso que te permita completar todas las repeticiones con buena forma.</span>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<span>Respira correctamente: exhala durante el esfuerzo e inhala durante la fase de recuperación.</span>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<span>Mantén la tensión muscular durante todo el movimiento, evitando los tirones.</span>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<span>Realiza un calentamiento de 5-10 minutos antes de comenzar.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Miércoles -->
+<div id="miercoles" class="tab-content">
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Plan de Alimentación -->
+<div class="w-full lg:w-1/2">
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="p-6">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-2xl font-bold text-gray-800">Plan de Alimentación - Miércoles</h2>
+<div class="flex items-center">
+<span class="text-sm text-gray-500 mr-2">Completado</span>
+<label class="custom-switch">
+<input type="checkbox">
+<span class="switch-slider"></span>
+</label>
+</div>
+</div>
+<div class="mb-8">
+<div class="rounded-lg overflow-hidden h-64 mb-4">
+<img src="https://readdy.ai/api/search-image?query=A%20beautiful%20keto%20dinner%20with%20grilled%20chicken%2C%20cauliflower%20rice%2C%20and%20roasted%20vegetables%20on%20a%20white%20plate%20with%20a%20clean%20white%20background.%20Professional%20food%20photography%20with%20natural%20lighting%2C%20showing%20the%20texture%20and%20colors%20of%20the%20food%20in%20detail.%20The%20composition%20is%20elegant%20and%20appetizing.&width=800&height=500&seq=6&orientation=landscape" alt="Cena Keto" class="w-full h-full object-cover object-top">
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between mb-2">
+<span class="font-medium">Calorías totales:</span>
+<span>1,680 kcal</span>
+</div>
+<div class="flex justify-between mb-2">
+<span class="font-medium">Grasas:</span>
+<span>132g (71%)</span>
+</div>
+<div class="flex justify-between mb-2">
+<span class="font-medium">Proteínas:</span>
+<span>95g (23%)</span>
+</div>
+<div class="flex justify-between">
+<span class="font-medium">Carbohidratos:</span>
+<span>25g (6%)</span>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div>
+<h3 class="text-lg font-semibold text-gray-800 mb-3">Desayuno</h3>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h4 class="font-medium mb-2">Tortilla de espárragos y queso</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<input type="checkbox" id="miercoles-item1">
+<label for="miercoles-item1" class="cursor-pointer">3 huevos</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="miercoles-item2">
+<label for="miercoles-item2" class="cursor-pointer">50g de espárragos</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="miercoles-item3">
+<label for="miercoles-item3" class="cursor-pointer">30g de queso cheddar rallado</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="miercoles-item4">
+<label for="miercoles-item4" class="cursor-pointer">1 cucharada de aceite de oliva</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="miercoles-item5">
+<label for="miercoles-item5" class="cursor-pointer">Sal y pimienta al gusto</label>
+</li>
+</ul>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-gray-800 mb-3">Almuerzo</h3>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h4 class="font-medium mb-2">Ensalada César con pollo</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<input type="checkbox" id="miercoles-item6">
+<label for="miercoles-item6" class="cursor-pointer">150g de pechuga de pollo a la plancha</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="miercoles-item7">
+<label for="miercoles-item7" class="cursor-pointer">2 tazas de lechuga romana</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="miercoles-item8">
+<label for="miercoles-item8" class="cursor-pointer">30g de queso parmesano rallado</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="miercoles-item9">
+<label for="miercoles-item9" class="cursor-pointer">2 cucharadas de aliño César bajo en carbohidratos</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="miercoles-item10">
+<label for="miercoles-item10" class="cursor-pointer">2 lonchas de bacon crujiente</label>
+</li>
+</ul>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-gray-800 mb-3">Cena</h3>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h4 class="font-medium mb-2">Chuletas de cerdo con coliflor gratinada</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<input type="checkbox" id="miercoles-item11">
+<label for="miercoles-item11" class="cursor-pointer">180g de chuleta de cerdo</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="miercoles-item12">
+<label for="miercoles-item12" class="cursor-pointer">1 taza de coliflor</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="miercoles-item13">
+<label for="miercoles-item13" class="cursor-pointer">50g de queso gruyère rallado</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="miercoles-item14">
+<label for="miercoles-item14" class="cursor-pointer">2 cucharadas de nata para cocinar</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="miercoles-item15">
+<label for="miercoles-item15" class="cursor-pointer">1 cucharada de aceite de oliva</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="miercoles-item16">
+<label for="miercoles-item16" class="cursor-pointer">Hierbas y especias al gusto</label>
+</li>
+</ul>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-gray-800 mb-3">Snack</h3>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h4 class="font-medium mb-2">Snack de media tarde</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<input type="checkbox" id="miercoles-item17">
+<label for="miercoles-item17" class="cursor-pointer">100g de queso brie</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="miercoles-item18">
+<label for="miercoles-item18" class="cursor-pointer">10 aceitunas verdes</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="miercoles-item19">
+<label for="miercoles-item19" class="cursor-pointer">5 nueces de macadamia</label>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Plan de Ejercicios -->
+<div class="w-full lg:w-1/2">
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="p-6">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-2xl font-bold text-gray-800">Rutina de Ejercicios - Miércoles</h2>
+<div class="flex items-center">
+<span class="text-sm text-gray-500 mr-2">Completado</span>
+<label class="custom-switch">
+<input type="checkbox">
+<span class="switch-slider"></span>
+</label>
+</div>
+</div>
+<div class="mb-8">
+<div class="rounded-lg overflow-hidden h-64 mb-4">
+<img src="https://readdy.ai/api/search-image?query=A%20person%20performing%20yoga%20or%20stretching%20exercises%20in%20a%20bright%2C%20airy%20space%20with%20natural%20light.%20The%20image%20shows%20proper%20form%20for%20flexibility%20exercises%2C%20wearing%20comfortable%20athletic%20clothing.%20The%20background%20is%20clean%20and%20minimalist.%20Professional%20fitness%20photography%20style%20with%20soft%20natural%20lighting%20highlighting%20the%20bodys%20form%20and%20alignment.&width=800&height=500&seq=7&orientation=landscape" alt="Yoga y estiramientos" class="w-full h-full object-cover object-top">
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h3 class="font-medium text-lg mb-2">Yoga y estiramientos - Día de recuperación activa</h3>
+<p class="text-gray-700 mb-4">Esta sesión de yoga y estiramientos te ayudará a recuperarte de los entrenamientos intensos, mejorar la flexibilidad y reducir el estrés.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center">
+<span class="text-sm font-medium text-gray-600 mr-2">Intensidad:</span>
+<div class="intensity-indicator">
+<div class="intensity-dot active"></div>
+<div class="intensity-dot active"></div>
+<div class="intensity-dot"></div>
+<div class="intensity-dot"></div>
+<div class="intensity-dot"></div>
+</div>
+</div>
+<div class="flex items-center">
+<span class="text-sm font-medium text-gray-600 mr-2">Calorías:</span>
+<span class="text-sm">150-200</span>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold">1. Saludo al sol (Surya Namaskar)</h3>
+<div class="flex items-center">
+<div class="timer-button mr-2" data-time="300">
+<i class="ri-timer-line"></i>
+</div>
+<span class="text-sm font-medium">5 min</span>
+</div>
+</div>
+<p class="text-gray-700 mb-3">Una secuencia fluida de 12 posturas que calientan el cuerpo, estiran los músculos principales y mejoran la circulación. Realiza 5 repeticiones completas a un ritmo cómodo.</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold">2. Postura del guerrero (Virabhadrasana)</h3>
+<div class="flex items-center">
+<div class="timer-button mr-2" data-time="180">
+<i class="ri-timer-line"></i>
+</div>
+<span class="text-sm font-medium">3 min (cada lado)</span>
+</div>
+</div>
+<p class="text-gray-700 mb-3">Fortalece las piernas, abre las caderas y estira los hombros. Mantén la postura durante 30 segundos en cada lado y repite 3 veces.</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold">3. Postura del perro boca abajo (Adho Mukha Svanasana)</h3>
+<div class="flex items-center">
+<div class="timer-button mr-2" data-time="180">
+<i class="ri-timer-line"></i>
+</div>
+<span class="text-sm font-medium">3 min</span>
+</div>
+</div>
+<p class="text-gray-700 mb-3">Estira la espalda, los hombros y las pantorrillas mientras fortalece los brazos. Mantén la postura durante 30 segundos y repite 6 veces.</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold">4. Postura de la paloma (Eka Pada Rajakapotasana)</h3>
+<div class="flex items-center">
+<div class="timer-button mr-2" data-time="180">
+<i class="ri-timer-line"></i>
+</div>
+<span class="text-sm font-medium">3 min (cada lado)</span>
+</div>
+</div>
+<p class="text-gray-700 mb-3">Abre las caderas y estira los glúteos y la zona lumbar. Mantén la postura durante 1 minuto en cada lado y repite 3 veces.</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold">5. Postura del niño (Balasana)</h3>
+<div class="flex items-center">
+<div class="timer-button mr-2" data-time="180">
+<i class="ri-timer-line"></i>
+</div>
+<span class="text-sm font-medium">3 min</span>
+</div>
+</div>
+<p class="text-gray-700 mb-3">Relaja la espalda, los hombros y el cuello. Estira suavemente la columna y las caderas. Mantén la postura durante 1 minuto y repite 3 veces.</p>
+</div>
+<div class="bg-primary/10 p-4 rounded-lg">
+<h3 class="font-semibold mb-2">Consejos para la práctica</h3>
+<ul class="space-y-2 text-gray-700">
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<span>Respira profundamente durante toda la práctica, sincronizando la respiración con el movimiento.</span>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<span>No fuerces ninguna postura más allá de tu capacidad actual. Respeta los límites de tu cuerpo.</span>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<span>Usa props como bloques o mantas si es necesario para mantener la alineación correcta.</span>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<span>Finaliza la sesión con 5 minutos de meditación o respiración consciente.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Jueves -->
+<div id="jueves" class="tab-content">
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Plan de Alimentación -->
+<div class="w-full lg:w-1/2">
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="p-6">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-2xl font-bold text-gray-800">Plan de Alimentación - Jueves</h2>
+<div class="flex items-center">
+<span class="text-sm text-gray-500 mr-2">Completado</span>
+<label class="custom-switch">
+<input type="checkbox">
+<span class="switch-slider"></span>
+</label>
+</div>
+</div>
+<div class="mb-8">
+<div class="rounded-lg overflow-hidden h-64 mb-4">
+<img src="https://readdy.ai/api/search-image?query=A%20beautiful%20keto%20meal%20with%20grilled%20shrimp%2C%20zucchini%20noodles%2C%20and%20avocado%20on%20a%20white%20plate%20with%20a%20clean%20white%20background.%20Professional%20food%20photography%20with%20natural%20lighting%2C%20showing%20the%20texture%20and%20colors%20of%20the%20food%20in%20detail.%20The%20composition%20is%20elegant%20and%20appetizing.&width=800&height=500&seq=8&orientation=landscape" alt="Comida Keto" class="w-full h-full object-cover object-top">
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between mb-2">
+<span class="font-medium">Calorías totales:</span>
+<span>1,700 kcal</span>
+</div>
+<div class="flex justify-between mb-2">
+<span class="font-medium">Grasas:</span>
+<span>138g (73%)</span>
+</div>
+<div class="flex justify-between mb-2">
+<span class="font-medium">Proteínas:</span>
+<span>88g (21%)</span>
+</div>
+<div class="flex justify-between">
+<span class="font-medium">Carbohidratos:</span>
+<span>23g (6%)</span>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div>
+<h3 class="text-lg font-semibold text-gray-800 mb-3">Desayuno</h3>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h4 class="font-medium mb-2">Pancakes keto de coco</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<input type="checkbox" id="jueves-item1">
+<label for="jueves-item1" class="cursor-pointer">2 huevos</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="jueves-item2">
+<label for="jueves-item2" class="cursor-pointer">2 cucharadas de harina de coco</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="jueves-item3">
+<label for="jueves-item3" class="cursor-pointer">2 cucharadas de queso crema</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="jueves-item4">
+<label for="jueves-item4" class="cursor-pointer">1 cucharada de aceite de coco</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="jueves-item5">
+<label for="jueves-item5" class="cursor-pointer">1 cucharadita de eritritol (opcional)</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="jueves-item6">
+<label for="jueves-item6" class="cursor-pointer">10 arándanos frescos</label>
+</li>
+</ul>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-gray-800 mb-3">Almuerzo</h3>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h4 class="font-medium mb-2">Gambas al ajillo con espárragos</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<input type="checkbox" id="jueves-item7">
+<label for="jueves-item7" class="cursor-pointer">150g de gambas peladas</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="jueves-item8">
+<label for="jueves-item8" class="cursor-pointer">3 dientes de ajo picados</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="jueves-item9">
+<label for="jueves-item9" class="cursor-pointer">1 guindilla (opcional)</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="jueves-item10">
+<label for="jueves-item10" class="cursor-pointer">3 cucharadas de aceite de oliva</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="jueves-item11">
+<label for="jueves-item11" class="cursor-pointer">1 taza de espárragos</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="jueves-item12">
+<label for="jueves-item12" class="cursor-pointer">Perejil fresco picado</label>
+</li>
+</ul>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-gray-800 mb-3">Cena</h3>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h4 class="font-medium mb-2">Hamburguesa keto con champiñones</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<input type="checkbox" id="jueves-item13">
+<label for="jueves-item13" class="cursor-pointer">180g de carne picada de ternera</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="jueves-item14">
+<label for="jueves-item14" class="cursor-pointer">1 huevo (para la mezcla)</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="jueves-item15">
+<label for="jueves-item15" class="cursor-pointer">100g de champiñones salteados</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="jueves-item16">
+<label for="jueves-item16" class="cursor-pointer">30g de queso cheddar</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="jueves-item17">
+<label for="jueves-item17" class="cursor-pointer">1 hoja de lechuga grande (como sustituto del pan)</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="jueves-item18">
+<label for="jueves-item18" class="cursor-pointer">1 cucharada de mayonesa casera</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="jueves-item19">
+<label for="jueves-item19" class="cursor-pointer">1/4 de aguacate en rodajas</label>
+</li>
+</ul>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-gray-800 mb-3">Snack</h3>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h4 class="font-medium mb-2">Snack de media tarde</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<input type="checkbox" id="jueves-item20">
+<label for="jueves-item20" class="cursor-pointer">2 rollitos de jamón serrano</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="jueves-item21">
+<label for="jueves-item21" class="cursor-pointer">30g de queso de cabra</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="jueves-item22">
+<label for="jueves-item22" class="cursor-pointer">5 aceitunas negras</label>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Plan de Ejercicios -->
+<div class="w-full lg:w-1/2">
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="p-6">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-2xl font-bold text-gray-800">Rutina de Ejercicios - Jueves</h2>
+<div class="flex items-center">
+<span class="text-sm text-gray-500 mr-2">Completado</span>
+<label class="custom-switch">
+<input type="checkbox">
+<span class="switch-slider"></span>
+</label>
+</div>
+</div>
+<div class="mb-8">
+<div class="rounded-lg overflow-hidden h-64 mb-4">
+<img src="https://readdy.ai/api/search-image?query=A%20person%20performing%20lower%20body%20strength%20exercises%20with%20proper%20form%20in%20a%20modern%20gym%20setting.%20The%20image%20shows%20squats%20or%20lunges%20with%20weights%2C%20wearing%20athletic%20clothing.%20The%20background%20is%20clean%20and%20minimalist.%20Professional%20fitness%20photography%20style%20with%20natural%20lighting%20highlighting%20the%20muscular%20definition%20and%20movement.&width=800&height=500&seq=9&orientation=landscape" alt="Entrenamiento de piernas" class="w-full h-full object-cover object-top">
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h3 class="font-medium text-lg mb-2">Entrenamiento de fuerza - Tren inferior</h3>
+<p class="text-gray-700 mb-4">Este entrenamiento se centra en desarrollar fuerza en las piernas y glúteos, ideal para complementar la dieta keto y aumentar el metabolismo basal.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center">
+<span class="text-sm font-medium text-gray-600 mr-2">Intensidad:</span>
+<div class="intensity-indicator">
+<div class="intensity-dot active"></div>
+<div class="intensity-dot active"></div>
+<div class="intensity-dot active"></div>
+<div class="intensity-dot active"></div>
+<div class="intensity-dot"></div>
+</div>
+</div>
+<div class="flex items-center">
+<span class="text-sm font-medium text-gray-600 mr-2">Calorías:</span>
+<span class="text-sm">280-330</span>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold">1. Sentadillas con peso</h3>
+<div class="flex items-center">
+<span class="text-sm font-medium">12-15 repeticiones</span>
+</div>
+</div>
+<p class="text-gray-700 mb-3">De pie con los pies separados a la anchura de los hombros, sostén una mancuerna en cada mano o una kettlebell frente al pecho. Baja las caderas como si fueras a sentarte, manteniendo el pecho erguido. Vuelve a la posición inicial.</p>
+<div class="flex justify-between">
+<span class="text-sm text-gray-600">Series: 4</span>
+<span class="text-sm text-gray-600">Descanso: 60 seg</span>
+</div>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold">2. Zancadas con mancuernas</h3>
+<div class="flex items-center">
+<span class="text-sm font-medium">10 repeticiones (cada pierna)</span>
+</div>
+</div>
+<p class="text-gray-700 mb-3">De pie, sostén una mancuerna en cada mano. Da un paso adelante con una pierna y baja la rodilla trasera hacia el suelo. Vuelve a la posición inicial y alterna las piernas.</p>
+<div class="flex justify-between">
+<span class="text-sm text-gray-600">Series: 3</span>
+<span class="text-sm text-gray-600">Descanso: 60 seg</span>
+</div>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold">3. Peso muerto con piernas rígidas</h3>
+<div class="flex items-center">
+<span class="text-sm font-medium">12 repeticiones</span>
+</div>
+</div>
+<p class="text-gray-700 mb-3">De pie, sostén una mancuerna en cada mano frente a los muslos. Con las rodillas ligeramente flexionadas, inclina el torso hacia adelante desde las caderas, manteniendo la espalda recta. Baja las mancuernas hasta la mitad de las espinillas y vuelve a la posición inicial.</p>
+<div class="flex justify-between">
+<span class="text-sm text-gray-600">Series: 3</span>
+<span class="text-sm text-gray-600">Descanso: 60 seg</span>
+</div>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold">4. Elevaciones de cadera</h3>
+<div class="flex items-center">
+<span class="text-sm font-medium">15 repeticiones</span>
+</div>
+</div>
+<p class="text-gray-700 mb-3">Túmbate boca arriba con las rodillas flexionadas y los pies apoyados en el suelo. Coloca una mancuerna o un disco sobre las caderas. Eleva las caderas hacia el techo, apretando los glúteos en la parte superior. Baja lentamente a la posición inicial.</p>
+<div class="flex justify-between">
+<span class="text-sm text-gray-600">Series: 3</span>
+<span class="text-sm text-gray-600">Descanso: 60 seg</span>
+</div>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold">5. Elevaciones de pantorrilla</h3>
+<div class="flex items-center">
+<span class="text-sm font-medium">20 repeticiones</span>
+</div>
+</div>
+<p class="text-gray-700 mb-3">De pie, sostén una mancuerna en cada mano o colócate cerca de una pared para mantener el equilibrio. Elévate sobre la punta de los pies y mantén la posición durante un segundo. Baja lentamente hasta que los talones toquen el suelo.</p>
+<div class="flex justify-between">
+<span class="text-sm text-gray-600">Series: 3</span>
+<span class="text-sm text-gray-600">Descanso: 45 seg</span>
+</div>
+</div>
+<div class="bg-primary/10 p-4 rounded-lg">
+<h3 class="font-semibold mb-2">Consejos para el entrenamiento</h3>
+<ul class="space-y-2 text-gray-700">
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<span>Mantén una técnica adecuada en cada ejercicio, priorizando la forma sobre el peso.</span>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<span>Aumenta el peso gradualmente a medida que te sientas más fuerte.</span>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<span>Realiza un calentamiento de 5-10 minutos antes de comenzar.</span>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<span>Estira los músculos trabajados al finalizar la sesión.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Viernes -->
+<div id="viernes" class="tab-content">
+<div class="flex flex-col lg:flex-row gap-8">
+<!-- Plan de Alimentación -->
+<div class="w-full lg:w-1/2">
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="p-6">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-2xl font-bold text-gray-800">Plan de Alimentación - Viernes</h2>
+<div class="flex items-center">
+<span class="text-sm text-gray-500 mr-2">Completado</span>
+<label class="custom-switch">
+<input type="checkbox">
+<span class="switch-slider"></span>
+</label>
+</div>
+</div>
+<div class="mb-8">
+<div class="rounded-lg overflow-hidden h-64 mb-4">
+<img src="https://readdy.ai/api/search-image?query=A%20beautiful%20keto%20meal%20with%20grilled%20fish%2C%20roasted%20vegetables%2C%20and%20a%20side%20salad%20on%20a%20white%20plate%20with%20a%20clean%20white%20background.%20Professional%20food%20photography%20with%20natural%20lighting%2C%20showing%20the%20texture%20and%20colors%20of%20the%20food%20in%20detail.%20The%20composition%20is%20elegant%20and%20appetizing.&width=800&height=500&seq=10&orientation=landscape" alt="Comida Keto" class="w-full h-full object-cover object-top">
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between mb-2">
+<span class="font-medium">Calorías totales:</span>
+<span>1,690 kcal</span>
+</div>
+<div class="flex justify-between mb-2">
+<span class="font-medium">Grasas:</span>
+<span>136g (72%)</span>
+</div>
+<div class="flex justify-between mb-2">
+<span class="font-medium">Proteínas:</span>
+<span>92g (22%)</span>
+</div>
+<div class="flex justify-between">
+<span class="font-medium">Carbohidratos:</span>
+<span>24g (6%)</span>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div>
+<h3 class="text-lg font-semibold text-gray-800 mb-3">Desayuno</h3>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h4 class="font-medium mb-2">Tazón de yogur griego con frutos secos</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<input type="checkbox" id="viernes-item1">
+<label for="viernes-item1" class="cursor-pointer">200g de yogur griego natural (entero)</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="viernes-item2">
+<label for="viernes-item2" class="cursor-pointer">15g de almendras picadas</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="viernes-item3">
+<label for="viernes-item3" class="cursor-pointer">10g de nueces</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="viernes-item4">
+<label for="viernes-item4" class="cursor-pointer">1 cucharada de semillas de chía</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="viernes-item5">
+<label for="viernes-item5" class="cursor-pointer">5 fresas cortadas (bajo en carbohidratos)</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="viernes-item6">
+<label for="viernes-item6" class="cursor-pointer">1 cucharadita de canela</label>
+</li>
+</ul>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-gray-800 mb-3">Almuerzo</h3>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h4 class="font-medium mb-2">Lubina a la plancha con verduras mediterráneas</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<input type="checkbox" id="viernes-item7">
+<label for="viernes-item7" class="cursor-pointer">180g de filete de lubina</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="viernes-item8">
+<label for="viernes-item8" class="cursor-pointer">1/2 calabacín en rodajas</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="viernes-item9">
+<label for="viernes-item9" class="cursor-pointer">1/2 pimiento rojo en tiras</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="viernes-item10">
+<label for="viernes-item10" class="cursor-pointer">5 aceitunas negras</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="viernes-item11">
+<label for="viernes-item11" class="cursor-pointer">2 cucharadas de aceite de oliva</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="viernes-item12">
+<label for="viernes-item12" class="cursor-pointer">1 diente de ajo picado</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="viernes-item13">
+<label for="viernes-item13" class="cursor-pointer">Zumo de limón, hierbas frescas</label>
+</li>
+</ul>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-gray-800 mb-3">Cena</h3>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h4 class="font-medium mb-2">Pizza keto con base de coliflor</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<input type="checkbox" id="viernes-item14">
+<label for="viernes-item14" class="cursor-pointer">1 taza de coliflor rallada (para la base)</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="viernes-item15">
+<label for="viernes-item15" class="cursor-pointer">1 huevo</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="viernes-item16">
+<label for="viernes-item16" class="cursor-pointer">50g de queso mozzarella rallado (para la base)</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="viernes-item17">
+<label for="viernes-item17" class="cursor-pointer">2 cucharadas de salsa de tomate baja en carbohidratos</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="viernes-item18">
+<label for="viernes-item18" class="cursor-pointer">50g de queso mozzarella rallado (para cubrir)</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="viernes-item19">
+<label for="viernes-item19" class="cursor-pointer">30g de pepperoni en rodajas</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="viernes-item20">
+<label for="viernes-item20" class="cursor-pointer">1/4 de pimiento verde en tiras</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="viernes-item21">
+<label for="viernes-item21" class="cursor-pointer">Albahaca fresca, orégano</label>
+</li>
+</ul>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold text-gray-800 mb-3">Snack</h3>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h4 class="font-medium mb-2">Snack de media tarde</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<input type="checkbox" id="viernes-item22">
+<label for="viernes-item22" class="cursor-pointer">Chips de queso parmesano (30g de queso horneado hasta que esté crujiente)</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="viernes-item23">
+<label for="viernes-item23" class="cursor-pointer">1 cucharada de guacamole</label>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Plan de Ejercicios -->
+<div class="w-full lg:w-1/2">
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="p-6">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-2xl font-bold text-gray-800">Rutina de Ejercicios - Viernes</h2>
+<div class="flex items-center">
+<span class="text-sm text-gray-500 mr-2">Completado</span>
+<label class="custom-switch">
+<input type="checkbox">
+<span class="switch-slider"></span>
+</label>
+</div>
+</div>
+<div class="mb-8">
+<div class="rounded-lg overflow-hidden h-64 mb-4">
+<img src="https://readdy.ai/api/search-image?query=A%20person%20performing%20full%20body%20circuit%20training%20exercises%20in%20a%20modern%20gym%20setting.%20The%20image%20shows%20dynamic%20movement%20with%20proper%20form%2C%20wearing%20athletic%20clothing.%20The%20background%20is%20clean%20and%20minimalist.%20Professional%20fitness%20photography%20style%20with%20natural%20lighting%20highlighting%20the%20muscular%20definition%20and%20movement.&width=800&height=500&seq=11&orientation=landscape" alt="Entrenamiento de circuito" class="w-full h-full object-cover object-top">
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h3 class="font-medium text-lg mb-2">Entrenamiento de circuito - Cuerpo completo</h3>
+<p class="text-gray-700 mb-4">Este entrenamiento combina ejercicios de fuerza y cardio en un circuito de alta intensidad para maximizar la quema de grasa y el acondicionamiento físico.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center">
+<span class="text-sm font-medium text-gray-600 mr-2">Intensidad:</span>
+<div class="intensity-indicator">
+<div class="intensity-dot active"></div>
+<div class="intensity-dot active"></div>
+<div class="intensity-dot active"></div>
+<div class="intensity-dot active"></div>
+<div class="intensity-dot active"></div>
+</div>
+</div>
+<div class="flex items-center">
+<span class="text-sm font-medium text-gray-600 mr-2">Calorías:</span>
+<span class="text-sm">350-400</span>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-6">
+<div class="bg-gray-50 p-4 rounded-lg">
+<h3 class="font-semibold mb-3">Instrucciones del circuito</h3>
+<p class="text-gray-700 mb-3">Realiza cada ejercicio durante 40 segundos, descansa 20 segundos y pasa al siguiente. Completa el circuito 3 veces con 2 minutos de descanso entre cada ronda.</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold">1. Burpees</h3>
+<div class="flex items-center">
+<div class="timer-button mr-2" data-time="40">
+<i class="ri-timer-line"></i>
+</div>
+<span class="text-sm font-medium">40 seg</span>
+</div>
+</div>
+<p class="text-gray-700 mb-3">Comienza de pie, baja a posición de cuclillas, coloca las manos en el suelo, extiende las piernas hacia atrás en posición de plancha, haz una flexión, vuelve a la posición de cuclillas y salta.</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold">2. Sentadillas con salto</h3>
+<div class="flex items-center">
+<div class="timer-button mr-2" data-time="40">
+<i class="ri-timer-line"></i>
+</div>
+<span class="text-sm font-medium">40 seg</span>
+</div>
+</div>
+<p class="text-gray-700 mb-3">Realiza una sentadilla normal, pero al subir, impulsa con fuerza para realizar un salto. Aterriza suavemente y vuelve a la posición de sentadilla.</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold">3. Flexiones de pecho</h3>
+<div class="flex items-center">
+<div class="timer-button mr-2" data-time="40">
+<i class="ri-timer-line"></i>
+</div>
+<span class="text-sm font-medium">40 seg</span>
+</div>
+</div>
+<p class="text-gray-700 mb-3">Colócate en posición de plancha con las manos a la altura de los hombros. Baja el cuerpo manteniendo la espalda recta hasta casi tocar el suelo con el pecho, luego empuja hacia arriba.</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold">4. Mountain climbers</h3>
+<div class="flex items-center">
+<div class="timer-button mr-2" data-time="40">
+<i class="ri-timer-line"></i>
+</div>
+<span class="text-sm font-medium">40 seg</span>
+</div>
+</div>
+<p class="text-gray-700 mb-3">Comienza en posición de plancha alta. Lleva una rodilla hacia el pecho y luego vuelve a la posición inicial. Alterna las piernas rápidamente como si estuvieras corriendo.</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold">5. Plancha con elevación de brazo y pierna</h3>
+<div class="flex items-center">
+<div class="timer-button mr-2" data-time="40">
+<i class="ri-timer-line"></i>
+</div>
+<span class="text-sm font-medium">40 seg</span>
+</div>
+</div>
+<p class="text-gray-700 mb-3">Comienza en posición de plancha. Eleva simultáneamente el brazo derecho y la pierna izquierda, mantén la posición un segundo y vuelve a la posición inicial. Alterna con el brazo izquierdo y la pierna derecha.</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-semibold">6. Saltos laterales</h3>
+<div class="flex items-center">
+<div class="timer-button mr-2" data-time="40">
+<i class="ri-timer-line"></i>
+</div>
+<span class="text-sm font-medium">40 seg</span>
+</div>
+</div>
+<p class="text-gray-700 mb-3">De pie, salta lateralmente de un lado a otro, aterrizando suavemente y manteniendo las rodillas ligeramente flexionadas.</p>
+</div>
+<div class="bg-primary/10 p-4 rounded-lg">
+<h3 class="font-semibold mb-2">Consejos para el entrenamiento</h3>
+<ul class="space-y-2 text-gray-700">
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<span>Mantén un ritmo constante pero no sacrifiques la técnica por la velocidad.</span>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<span>Respira de manera constante durante todo el entrenamiento.</span>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<span>Si eres principiante, reduce el tiempo de trabajo a 30 segundos.</span>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<span>Realiza un calentamiento de 5-10 minutos antes de comenzar.</span>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<span>Bebe agua entre cada ronda para mantenerte hidratado.</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Resumen Semanal -->
+<div id="resumen" class="tab-content">
+<div class="bg-white rounded-lg shadow-md overflow-hidden mb-8">
+<div class="p-6">
+<h2 class="text-2xl font-bold text-gray-800 mb-6">Resumen Nutricional Semanal</h2>
+<div class="mb-8">
+<div id="macronutrientesChart" class="h-80 w-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<div class="bg-gray-50 p-4 rounded-lg">
+<h3 class="font-semibold text-lg mb-2">Calorías diarias</h3>
+<div id="caloriasChart" class="h-60 w-full"></div>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h3 class="font-semibold text-lg mb-2">Distribución de grasas</h3>
+<div id="grasasChart" class="h-60 w-full"></div>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h3 class="font-semibold text-lg mb-2">Progreso de ejercicios</h3>
+<div id="ejerciciosChart" class="h-60 w-full"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-gray-50 p-4 rounded-lg">
+<h3 class="font-semibold text-lg mb-4">Beneficios de la dieta keto</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3 flex-shrink-0">
+<i class="ri-fire-line"></i>
+</div>
+<div>
+<h4 class="font-medium">Quema de grasa eficiente</h4>
+<p class="text-sm text-gray-600">Al limitar los carbohidratos, tu cuerpo entra en cetosis y utiliza la grasa como fuente principal de energía.</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3 flex-shrink-0">
+<i class="ri-brain-line"></i>
+</div>
+<div>
+<h4 class="font-medium">Mayor claridad mental</h4>
+<p class="text-sm text-gray-600">Las cetonas proporcionan una fuente de energía estable para el cerebro, mejorando la concentración y la claridad mental.</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3 flex-shrink-0">
+<i class="ri-heart-pulse-line"></i>
+</div>
+<div>
+<h4 class="font-medium">Control del apetito</h4>
+<p class="text-sm text-gray-600">Las grasas y proteínas aumentan la saciedad, reduciendo el hambre y los antojos de alimentos azucarados.</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-3 flex-shrink-0">
+<i class="ri-battery-charge-line"></i>
+</div>
+<div>
+<h4 class="font-medium">Energía estable</h4>
+<p class="text-sm text-gray-600">Evita los picos y caídas de azúcar en sangre, proporcionando niveles de energía más constantes durante todo el día.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<h3 class="font-semibold text-lg mb-4">Beneficios del ejercicio combinado</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-full bg-secondary/10 text-secondary mr-3 flex-shrink-0">
+<i class="ri-muscle-line"></i>
+</div>
+<div>
+<h4 class="font-medium">Preservación muscular</h4>
+<p class="text-sm text-gray-600">El entrenamiento de fuerza ayuda a mantener y desarrollar masa muscular mientras sigues una dieta keto.</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-full bg-secondary/10 text-secondary mr-3 flex-shrink-0">
+<i class="ri-heartbeat-line"></i>
+</div>
+<div>
+<h4 class="font-medium">Mayor quema calórica</h4>
+<p class="text-sm text-gray-600">El HIIT y los circuitos maximizan el gasto calórico durante y después del ejercicio (efecto EPOC).</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-full bg-secondary/10 text-secondary mr-3 flex-shrink-0">
+<i class="ri-mental-health-line"></i>
+</div>
+<div>
+<h4 class="font-medium">Mejora del estado de ánimo</h4>
+<p class="text-sm text-gray-600">El ejercicio libera endorfinas que reducen el estrés y mejoran el bienestar general.</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-8 h-8 flex items-center justify-center rounded-full bg-secondary/10 text-secondary mr-3 flex-shrink-0">
+<i class="ri-rest-time-line"></i>
+</div>
+<div>
+<h4 class="font-medium">Mejor recuperación</h4>
+<p class="text-sm text-gray-600">La combinación de días intensos con recuperación activa optimiza los resultados y previene lesiones.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="p-6">
+<h2 class="text-2xl font-bold text-gray-800 mb-6">Lista de compras semanal</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div>
+<h3 class="font-semibold text-lg mb-3 flex items-center">
+<div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-2">
+<i class="ri-egg-line"></i>
+</div>
+Proteínas
+</h3>
+<div class="bg-gray-50 p-4 rounded-lg">
+<ul class="space-y-2">
+<li class="flex items-start">
+<input type="checkbox" id="compra-item1">
+<label for="compra-item1" class="cursor-pointer">18 huevos grandes</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item2">
+<label for="compra-item2" class="cursor-pointer">500g de pechuga de pollo</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item3">
+<label for="compra-item3" class="cursor-pointer">400g de filete de ternera</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item4">
+<label for="compra-item4" class="cursor-pointer">400g de salmón</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item5">
+<label for="compra-item5" class="cursor-pointer">200g de lubina</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item6">
+<label for="compra-item6" class="cursor-pointer">200g de chuletas de cerdo</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item7">
+<label for="compra-item7" class="cursor-pointer">150g de gambas</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item8">
+<label for="compra-item8" class="cursor-pointer">200g de carne picada de ternera</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item9">
+<label for="compra-item9" class="cursor-pointer">100g de bacon</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item10">
+<label for="compra-item10" class="cursor-pointer">100g de jamón serrano</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item11">
+<label for="compra-item11" class="cursor-pointer">50g de pepperoni</label>
+</li>
+</ul>
+</div>
+</div>
+<div>
+<h3 class="font-semibold text-lg mb-3 flex items-center">
+<div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-2">
+<i class="ri-plant-line"></i>
+</div>
+Verduras y frutas
+</h3>
+<div class="bg-gray-50 p-4 rounded-lg">
+<ul class="space-y-2">
+<li class="flex items-start">
+<input type="checkbox" id="compra-item12">
+<label for="compra-item12" class="cursor-pointer">3 aguacates</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item13">
+<label for="compra-item13" class="cursor-pointer">500g de espinacas</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item14">
+<label for="compra-item14" class="cursor-pointer">1 lechuga romana</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item15">
+<label for="compra-item15" class="cursor-pointer">300g de espárragos</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item16">
+<label for="compra-item16" class="cursor-pointer">1 brócoli</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item17">
+<label for="compra-item17" class="cursor-pointer">1 coliflor</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item18">
+<label for="compra-item18" class="cursor-pointer">2 calabacines</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item19">
+<label for="compra-item19" class="cursor-pointer">1 pimiento rojo</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item20">
+<label for="compra-item20" class="cursor-pointer">1 pimiento verde</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item21">
+<label for="compra-item21" class="cursor-pointer">200g de champiñones</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item22">
+<label for="compra-item22" class="cursor-pointer">1 cabeza de ajo</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item23">
+<label for="compra-item23" class="cursor-pointer">10 fresas</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item24">
+<label for="compra-item24" class="cursor-pointer">1 puñado de arándanos</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item25">
+<label for="compra-item25" class="cursor-pointer">2 limones</label>
+</li>
+</ul>
+</div>
+</div>
+<div>
+<h3 class="font-semibold text-lg mb-3 flex items-center">
+<div class="w-8 h-8 flex items-center justify-center rounded-full bg-primary/10 text-primary mr-2">
+<i class="ri-drop-line"></i>
+</div>
+Grasas y otros
+</h3>
+<div class="bg-gray-50 p-4 rounded-lg">
+<ul class="space-y-2">
+<li class="flex items-start">
+<input type="checkbox" id="compra-item26">
+<label for="compra-item26" class="cursor-pointer">500ml de aceite de oliva virgen extra</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item27">
+<label for="compra-item27" class="cursor-pointer">200g de mantequilla</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item28">
+<label for="compra-item28" class="cursor-pointer">200ml de aceite de coco</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item29">
+<label for="compra-item29" class="cursor-pointer">200g de queso cheddar</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item30">
+<label for="compra-item30" class="cursor-pointer">200g de queso mozzarella</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item31">
+<label for="compra-item31" class="cursor-pointer">100g de queso parmesano</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item32">
+<label for="compra-item32" class="cursor-pointer">100g de queso feta</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item33">
+<label for="compra-item33" class="cursor-pointer">100g de queso gruyère</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item34">
+<label for="compra-item34" class="cursor-pointer">100g de queso brie</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item35">
+<label for="compra-item35" class="cursor-pointer">200g de queso crema</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item36">
+<label for="compra-item36" class="cursor-pointer">500g de yogur griego natural</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item37">
+<label for="compra-item37" class="cursor-pointer">200ml de nata para cocinar</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item38">
+<label for="compra-item38" class="cursor-pointer">1L de leche de almendra sin azúcar</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item39">
+<label for="compra-item39" class="cursor-pointer">100g de almendras</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item40">
+<label for="compra-item40" class="cursor-pointer">100g de nueces</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item41">
+<label for="compra-item41" class="cursor-pointer">50g de nueces de macadamia</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item42">
+<label for="compra-item42" class="cursor-pointer">100g de mantequilla de almendra</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item43">
+<label for="compra-item43" class="cursor-pointer">100g de semillas de chía</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item44">
+<label for="compra-item44" class="cursor-pointer">100g de harina de coco</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item45">
+<label for="compra-item45" class="cursor-pointer">100g de aceitunas verdes</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item46">
+<label for="compra-item46" class="cursor-pointer">100g de aceitunas negras</label>
+</li>
+<li class="flex items-start">
+<input type="checkbox" id="compra-item47">
+<label for="compra-item47" class="cursor-pointer">Especias variadas (sal, pimienta, orégano, albahaca, canela)</label>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-12">
+<div class="container mx-auto px-4">
+<div class="flex flex-col md:flex-row justify-between mb-8">
+<div class="mb-6 md:mb-0">
+<h2 class="text-3xl font-['Pacifico'] text-white mb-4">FitWeeKeto</h2>
+<p class="text-gray-400 max-w-md">Tu guía completa para combinar la dieta cetogénica con ejercicios efectivos, diseñada para maximizar tus resultados y mejorar tu bienestar general.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+<div>
+<h3 class="text-lg font-semibold mb-4">Enlaces rápidos</h3>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-white transition">Inicio</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition">Planes de comida</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition">Rutinas de ejercicio</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition">Recetas</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition">Contacto</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Recursos</h3>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-white transition">Guía para principiantes</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition">Calculadora de macros</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition">Lista de alimentos keto</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition">Preguntas frecuentes</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
+</ul>
+</div>
+<div class="col-span-2 md:col-span-1">
+<h3 class="text-lg font-semibold mb-4">Suscríbete</h3>
+<p class="text-gray-400 mb-4">Recibe nuevas recetas y rutinas cada semana</p>
+<div class="flex">
+<input type="email" placeholder="Tu email" class="px-4 py-2 w-full rounded-l-button text-gray-800 border-none focus:outline-none">
+<button class="bg-primary text-white px-4 py-2 rounded-r-button whitespace-nowrap">Suscribir</button>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 mb-4 md:mb-0">© 2025 FitWeeKeto. Todos los derechos reservados.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-400 hover:text-white transition">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-700">
+<i class="ri-facebook-fill"></i>
+</div>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-700">
+<i class="ri-instagram-line"></i>
+</div>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-700">
+<i class="ri-twitter-x-line"></i>
+</div>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition">
+<div class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-700">
+<i class="ri-youtube-line"></i>
+</div>
+</a>
+</div>
+</div>
+<div class="mt-8 text-xs text-gray-500 text-center">
+<p>Aviso: Consulta con un profesional de la salud antes de comenzar cualquier dieta o programa de ejercicios, especialmente si tienes condiciones médicas preexistentes.</p>
+</div>
+</div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Download Modal
+const downloadBtn = document.getElementById('downloadBtn');
+const downloadModal = document.getElementById('downloadModal');
+const closeModal = document.getElementById('closeModal');
+const downloadForm = document.getElementById('downloadForm');
+downloadBtn.addEventListener('click', () => {
+downloadModal.classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+});
+closeModal.addEventListener('click', () => {
+downloadModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+});
+downloadModal.addEventListener('click', (e) => {
+if (e.target === downloadModal) {
+downloadModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+}
+});
+downloadForm.addEventListener('submit', (e) => {
+e.preventDefault();
+const email = document.getElementById('email').value;
+const downloadUrl = document.getElementById('downloadUrl').value;
+const subscribe = document.getElementById('subscribe').checked;
+// Here you would typically send the data to your server
+console.log('Email:', email, 'Download URL:', downloadUrl, 'Subscribe:', subscribe);
+// Show success message
+const formContent = downloadForm.innerHTML;
+downloadForm.innerHTML = `
+<div class="text-center py-4">
+<div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+<i class="ri-check-line text-3xl text-green-500"></i>
+</div>
+<h3 class="text-xl font-semibold text-gray-800 mb-2">¡Gracias!</h3>
+<p class="text-gray-600">Hemos enviado el eBook a tu correo electrónico.</p>
+</div>
+`;
+// Close modal after 3 seconds
+setTimeout(() => {
+downloadModal.classList.add('hidden');
+document.body.style.overflow = 'auto';
+downloadForm.innerHTML = formContent;
+}, 3000);
+});
+// Tab switching
+const tabs = document.querySelectorAll('.tab-button');
+const tabContents = document.querySelectorAll('.tab-content');
+tabs.forEach(tab => {
+tab.addEventListener('click', () => {
+const target = tab.dataset.tab;
+// Update active tab button
+tabs.forEach(t => {
+if (t.dataset.tab === target) {
+t.classList.remove('bg-gray-100', 'text-gray-700');
+t.classList.add('bg-primary', 'text-white');
+} else {
+t.classList.remove('bg-primary', 'text-white');
+t.classList.add('bg-gray-100', 'text-gray-700');
+}
+});
+// Show active tab content
+tabContents.forEach(content => {
+if (content.id === target) {
+content.classList.add('active');
+} else {
+content.classList.remove('active');
+}
+});
+});
+});
+// Timer buttons
+const timerButtons = document.querySelectorAll('.timer-button');
+timerButtons.forEach(button => {
+button.addEventListener('click', function() {
+const seconds = parseInt(this.dataset.time);
+let remainingTime = seconds;
+const originalIcon = this.innerHTML;
+const interval = setInterval(() => {
+remainingTime--;
+this.innerHTML = remainingTime;
+if (remainingTime <= 0) {
+clearInterval(interval);
+this.innerHTML = originalIcon;
+}
+}, 1000);
+});
+});
+});
+document.addEventListener('DOMContentLoaded', function() {
+// Macronutrientes Chart
+const macronutrientesChart = echarts.init(document.getElementById('macronutrientesChart'));
+const macronutrientesOption = {
+animation: false,
+title: {
+text: 'Distribución de macronutrientes',
+left: 'center',
+textStyle: {
+color: '#1f2937'
+}
+},
+tooltip: {
+trigger: 'axis',
+axisPointer: {
+type: 'shadow'
+},
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+textStyle: {
+color: '#1f2937'
+}
+},
+legend: {
+data: ['Grasas', 'Proteínas', 'Carbohidratos'],
+bottom: 0,
+textStyle: {
+color: '#1f2937'
+}
+},
+grid: {
+left: '3%',
+right: '4%',
+bottom: '10%',
+top: '15%',
+containLabel: true
+},
+xAxis: {
+type: 'category',
+data: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'],
+axisLine: {
+lineStyle: {
+color: '#1f2937'
+}
+}
+},
+yAxis: {
+type: 'value',
+name: 'Gramos',
+axisLine: {
+lineStyle: {
+color: '#1f2937'
+}
+}
+},
+series: [
+{
+name: 'Grasas',
+type: 'bar',
+stack: 'total',
+emphasis: {
+focus: 'series'
+},
+data: [135, 140, 132, 138, 136],
+color: 'rgba(87, 181, 231, 1)'
+},
+{
+name: 'Proteínas',
+type: 'bar',
+stack: 'total',
+emphasis: {
+focus: 'series'
+},
+data: [85, 90, 95, 88, 92],
+color: 'rgba(141, 211, 199, 1)'
+},
+{
+name: 'Carbohidratos',
+type: 'bar',
+stack: 'total',
+emphasis: {
+focus: 'series'
+},
+data: [20, 22, 25, 23, 24],
+color: 'rgba(251, 191, 114, 1)'
+}
+]
+};
+macronutrientesChart.setOption(macronutrientesOption);
+// Calorías Chart
+const caloriasChart = echarts.init(document.getElementById('caloriasChart'));
+const caloriasOption = {
+animation: false,
+tooltip: {
+trigger: 'axis',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+textStyle: {
+color: '#1f2937'
+}
+},
+xAxis: {
+type: 'category',
+data: ['L', 'M', 'X', 'J', 'V'],
+axisLine: {
+lineStyle: {
+color: '#1f2937'
+}
+}
+},
+yAxis: {
+type: 'value',
+min: 1600,
+axisLine: {
+lineStyle: {
+color: '#1f2937'
+}
+}
+},
+series: [{
+data: [1650, 1720, 1680, 1700, 1690],
+type: 'line',
+smooth: true,
+lineStyle: {
+width: 3,
+color: 'rgba(87, 181, 231, 1)'
+},
+symbol: 'none',
+areaStyle: {
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(87, 181, 231, 0.2)'
+}, {
+offset: 1, color: 'rgba(87, 181, 231, 0.01)'
+}]
+}
+}
+}]
+};
+caloriasChart.setOption(caloriasOption);
+// Grasas Chart
+const grasasChart = echarts.init(document.getElementById('grasasChart'));
+const grasasOption = {
+animation: false,
+tooltip: {
+trigger: 'item',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+textStyle: {
+color: '#1f2937'
+}
+},
+legend: {
+bottom: '0%',
+left: 'center',
+textStyle: {
+color: '#1f2937'
+}
+},
+series: [
+{
+type: 'pie',
+radius: ['40%', '70%'],
+avoidLabelOverlap: false,
+itemStyle: {
+borderRadius: 10,
+borderColor: '#fff',
+borderWidth: 2
+},
+label: {
+show: false,
+position: 'center'
+},
+emphasis: {
+label: {
+show: true,
+fontSize: '14',
+fontWeight: 'bold'
+}
+},
+labelLine: {
+show: false
+},
+data: [
+{ value: 60, name: 'Saturadas', itemStyle: { color: 'rgba(87, 181, 231, 1)' } },
+{ value: 30, name: 'Monoinsaturadas', itemStyle: { color: 'rgba(141, 211, 199, 1)' } },
+{ value: 10, name: 'Poliinsaturadas', itemStyle: { color: 'rgba(251, 191, 114, 1)' } }
+]
+}
+]
+};
+grasasChart.setOption(grasasOption);
+// Ejercicios Chart
+const ejerciciosChart = echarts.init(document.getElementById('ejerciciosChart'));
+const ejerciciosOption = {
+animation: false,
+tooltip: {
+trigger: 'axis',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+textStyle: {
+color: '#1f2937'
+}
+},
+xAxis: {
+type: 'category',
+data: ['L', 'M', 'X', 'J', 'V'],
+axisLine: {
+lineStyle: {
+color: '#1f2937'
+}
+}
+},
+yAxis: {
+type: 'value',
+axisLine: {
+lineStyle: {
+color: '#1f2937'
+}
+}
+},
+series: [{
+name: 'Calorías quemadas',
+data: [325, 275, 175, 305, 375],
+type: 'bar',
+itemStyle: {
+color: 'rgba(252, 141, 98, 1)',
+borderRadius: 6
+}
+}]
+};
+ejerciciosChart.setOption(ejerciciosOption);
+// Resize charts when window size changes
+window.addEventListener('resize', function() {
+macronutrientesChart.resize();
+caloriasChart.resize();
+grasasChart.resize();
+ejerciciosChart.resize();
+});
+});
+</script>
+</body>
+</html>
